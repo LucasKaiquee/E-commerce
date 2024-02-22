@@ -1,21 +1,25 @@
+"use client"
+
 import { BsCart3 } from "react-icons/bs"
 
 import "./header.styles.css"
+import { HeaderContainer, HeaderTitle, HeaderItem, HeaderItems } from "./header.styles"
 
 export default function Header() {
     return (
-        <div className="header-container">
-            <h2 className="header-title">LK STORE</h2>
+        <HeaderContainer>
+            <HeaderTitle>LK STORE</HeaderTitle>
 
-            <div className="header-items">
-                <div className="header-item">Explorar</div>
-                <div className="header-item">Login</div>
-                <div className="header-item">Criar Conta</div>
-                <div className="header-item">
+            <HeaderItems>
+                <HeaderItem>Explorar</HeaderItem> 
+                <HeaderItem>Login</HeaderItem>
+                <HeaderItem>Criar Conta</HeaderItem>
+                <HeaderItem>
                     <BsCart3 size={25} />
                     <p className="ml-1">5</p>
-                </div>
-            </div>
-        </div>
+                </HeaderItem>
+            </HeaderItems>
+             
+        </HeaderContainer>
     )
 } 
