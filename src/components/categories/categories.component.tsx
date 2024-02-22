@@ -1,11 +1,12 @@
 "use client"
-
-
 import { useEffect, useState } from "react"
-import "./categories.styles.css"
-import Category from "@/types/categories.types"
 import { collection, getDocs } from "firebase/firestore"
+
+import Category from "@/types/categories.types"
 import { db } from "@/config/firebase.config"
+
+import "./categories.styles.css"
+import CategoryItem from "../category-item/category-item.component"
 
 export default function Categories() {
     const [categories, setCategories] = useState<Category[]>([])
@@ -34,7 +35,7 @@ export default function Categories() {
     return(
         <div className="categories-container">
             <div className="categories-content">
-
+                {categories.map((categoryItem, key) => <CategoryItem key={key} category={categoryItem} />)}  
             </div>
         </div>
     )
