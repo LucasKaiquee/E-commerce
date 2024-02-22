@@ -1,10 +1,11 @@
-import Image from "next/image";
+import Categories from "@/components/categories/categories.component";
 import Header from "@/components/header/header.component";
 
 export default function Home() {
   return (
-    <main className="">
+    <main>
       <Header />
+      <Categories />
     </main>
   );
 }
