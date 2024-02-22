@@ -7,10 +7,10 @@ interface CategoryItemProps {
     category: Category
 }
 
-const categoryItem: FunctionComponent<CategoryItemProps> = ({category}) => {
+const CategoryItem: FunctionComponent<CategoryItemProps> = ({category}) => {
     return(
-        <div className="category-item-container" style={{background: category.imageUrl}}>
-            <div className="category-name-container">
+        <div className="category-item-container" style={{backgroundImage: `url(${category.imageUrl})`}}>
+            <div className="category-name">
                 <p>{category.displayName}</p>
                 <p>Explorar</p>
             </div>
@@ -18,4 +18,4 @@ const categoryItem: FunctionComponent<CategoryItemProps> = ({category}) => {
     )
 }
 
-export default categoryItem
+export default CategoryItem
