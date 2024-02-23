@@ -5,13 +5,13 @@ import { collection, getDocs } from "firebase/firestore"
 import Category from "@/types/categories.types"
 import { db } from "@/config/firebase.config"
 
-import "./categories.styles.css"
+import { CategoriesContainer, CategoriesContent } from "./categories.styles"
+
 import CategoryItem from "../category-item/category-item.component"
 
 export default function Categories() {
     const [categories, setCategories] = useState<Category[]>([])
 
-    console.log(categories)
     const fetchCategories = async () => {
         try {
             const categoriesFromFirestore: Category[] = []
@@ -33,10 +33,14 @@ export default function Categories() {
     }, [])
 
     return(
-        <div className="categories-container">
-            <div className="categories-content">
-                {categories.map((categoryItem, key) => <CategoryItem key={key} category={categoryItem} />)}  
-            </div>
-        </div>
+        <CategoriesContainer>
+            <CategoriesContent>
+                {categories.map((categoryItem) => (
+                    <div key={categoryItem.id}>
+                        <CategoryItem  category={categoryItem} />
+                    </div>) 
+                )}  
+            </CategoriesContent>
+        </CategoriesContainer>
     )
 }

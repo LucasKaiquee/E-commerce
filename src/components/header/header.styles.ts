@@ -13,7 +13,7 @@ export const HeaderContainer = styled.div`
 export const HeaderTitle = styled.h2`
     font-weight: bold;
     font-size: 1.5rem;
-`
+`  
 
 export const HeaderItems = styled.div`
     display: flex;

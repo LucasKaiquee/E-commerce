@@ -2,7 +2,6 @@
 
 import { BsCart3 } from "react-icons/bs"
 
-import "./header.styles.css"
 import { HeaderContainer, HeaderTitle, HeaderItem, HeaderItems } from "./header.styles"
 
 export default function Header() {
@@ -19,7 +18,6 @@ export default function Header() {
                     <p className="ml-1">5</p>
                 </HeaderItem>
             </HeaderItems>
-             
         </HeaderContainer>
     )
 } 
