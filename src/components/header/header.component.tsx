@@ -8,7 +8,6 @@ export default function Header() {
     return (
         <HeaderContainer>
             <HeaderTitle>LK STORE</HeaderTitle>
-
             <HeaderItems>
                 <HeaderItem>Explorar</HeaderItem> 
                 <HeaderItem>Login</HeaderItem>
