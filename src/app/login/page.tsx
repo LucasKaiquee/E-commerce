@@ -8,9 +8,11 @@ import { LoginContainer, LoginContent, LoginHeadline, LoginInputContainer, Login
 import { BsGoogle } from "react-icons/bs"
 import { FiLogIn } from "react-icons/fi"
 import { useForm } from "react-hook-form"
+import isEmail from "validator/lib/isEmail"
 
 
 import CustomInput from "@/components/custom-input/custom-input.component"
+import InputErrorMessage from "@/components/input-error-message/input-error-message.component"
 
 export default function LoginPage() {
 
@@ -42,9 +44,23 @@ export default function LoginPage() {
                         <p>Email</p>
                         <CustomInput 
                             hasError={!!errors?.email}
-                            placeholder="Digite seu e-mail" 
-                            {...register('email', { required: true })} 
+                            placeholder="Digite seu email" 
+                            {...register('email', { required: true, validate: (value) => {
+                                return isEmail(value)
+                            }})} 
                         />
+
+                        {errors?.email?.type === "required" && (
+                            <InputErrorMessage>
+                                o email é obrigatório.
+                            </InputErrorMessage>
+                        )}
+
+                          {errors?.email?.type === "validate" && (
+                            <InputErrorMessage>
+                                Por favor, insira um email válido.
+                            </InputErrorMessage>
+                        )}
                     </LoginInputContainer>
 
                     <LoginInputContainer>
@@ -54,6 +70,13 @@ export default function LoginPage() {
                             placeholder="Digite sua senha" 
                             {...register('password', { required: true })} 
                         />
+
+                        {errors?.password?.type === "required" && (
+                            <InputErrorMessage>
+                                A senha é obrigatória.
+                            </InputErrorMessage>
+
+                        )}
                     </LoginInputContainer>
 
                     <CustomButton 
