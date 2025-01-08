@@ -18,13 +18,17 @@ export default function Header() {
         router.push("./login")
     }
 
+    const handleCreateAccountClick = () => {
+        router.push("./sign-up")
+    }
+
     return (
         <HeaderContainer>
-            <HeaderTitle>LK STORE</HeaderTitle>
+            <HeaderTitle onClick={() => router.push("./")}>LK STORE</HeaderTitle>
             <HeaderItems>
                 <HeaderItem>Explorar</HeaderItem> 
                 <HeaderItem onClick={handleLoginClick}>Login</HeaderItem>
-                <HeaderItem>Criar Conta</HeaderItem>
+                <HeaderItem onClick={handleCreateAccountClick}>Criar Conta</HeaderItem>
                 <HeaderItem>
                     <BsCart3 size={25} />
                     <p className="ml-1">5</p>

@@ -56,7 +56,7 @@ export default function LoginPage() {
                             </InputErrorMessage>
                         )}
 
-                          {errors?.email?.type === "validate" && (
+                        {errors?.email?.type === "validate" && (
                             <InputErrorMessage>
                                 Por favor, insira um email válido.
                             </InputErrorMessage>
@@ -68,6 +68,7 @@ export default function LoginPage() {
                         <CustomInput 
                             hasError={!!errors?.password}
                             placeholder="Digite sua senha" 
+                            type="password"
                             {...register('password', { required: true })} 
                         />
 
