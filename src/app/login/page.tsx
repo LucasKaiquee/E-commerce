@@ -10,9 +10,13 @@ import { FiLogIn } from "react-icons/fi"
 import { useForm } from "react-hook-form"
 import isEmail from "validator/lib/isEmail"
 
-
 import CustomInput from "@/components/custom-input/custom-input.component"
 import InputErrorMessage from "@/components/input-error-message/input-error-message.component"
+
+interface LoginForm { 
+    email: string
+    password: string
+}
 
 export default function LoginPage() {
 
@@ -20,9 +24,9 @@ export default function LoginPage() {
         register,
         formState: { errors },
         handleSubmit
-    } = useForm()
+    } = useForm<LoginForm>()
 
-    const handleSubmitPress = (data: any) => {
+    const handleSubmitPress = (data: LoginForm) => {
         
     }
 
